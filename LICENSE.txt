@@ -1,0 +1,2 @@
+Copyright (c) 2026 Methogle.
+All rights reserved. This project is provided for the owner's private development and testing. No permission is granted to redistribute or sell copies without the owner's approval.

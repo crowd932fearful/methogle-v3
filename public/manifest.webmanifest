@@ -1,0 +1,12 @@
+{
+  "name": "Methogle",
+  "short_name": "Methogle",
+  "description": "Competitive Mathematics Methods battles.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050a08",
+  "theme_color": "#07110d",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

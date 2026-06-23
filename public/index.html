@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07110d">
+  <meta name="description" content="Methogle is a competitive Mathematics Methods platform with live 1v1 battles, ranked ladders, practice modes and progress tracking.">
+  <title>Methogle — Outsmart them.</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#top" aria-label="Methogle home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M9 8h20a10 10 0 0 1 10 10v5H25a8 8 0 0 0-8 8v9H9V8Z"/><path d="M39 40H24a7 7 0 0 1-7-7v-2h13a9 9 0 0 0 9-9V40Z" opacity=".55"/></svg>
+      </span>
+      <span>Methogle</span>
+      <span class="beta-pill">BETA</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#play">Play</a>
+      <a href="#leaderboard">Leaderboard</a>
+      <a href="#progress">Progress</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button" id="musicButton" type="button" aria-label="Turn music on" title="Music">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+      </button>
+      <div class="presence-pill"><span class="presence-dot"></span><strong id="onlineCount">1</strong> online</div>
+      <button class="button button-ghost" id="loginButton" type="button">Log in</button>
+      <button class="button button-primary compact" id="accountButton" type="button">Create account</button>
+      <button class="profile-button hidden" id="profileButton" type="button" aria-label="Open profile">
+        <span id="profileInitial">M</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="pulse-dot"></span> LIVE MATHEMATICS METHODS BATTLES</div>
+        <h1>Outthink.<br><span>Outsolve.</span> Outrank.</h1>
+        <p>Fast, competitive Methods battles covering calculus, probability, functions, sequences, exponentials, statistics and trigonometry.</p>
+        <div class="hero-actions">
+          <button class="button button-primary hero-button" type="button" data-start-mode="ranked">
+            Enter ranked arena
+            <span aria-hidden="true">↗</span>
+          </button>
+          <button class="button button-secondary hero-button" type="button" data-start-mode="practice">
+            Practise against Methobot
+          </button>
+        </div>
+        <div class="hero-metrics">
+          <div><strong>7</strong><span>Methods topics</span></div>
+          <div><strong>500+</strong><span>question variations</span></div>
+          <div><strong>ELO</strong><span>ranked ladder</span></div>
+        </div>
+      </div>
+
+      <div class="hero-stage reveal delay-one" aria-label="Methogle battle preview">
+        <div class="stage-glow"></div>
+        <div class="battle-preview glass-panel">
+          <div class="preview-topline">
+            <span class="live-tag"><i></i> RANKED MATCH</span>
+            <span>Round 4 / 7</span>
+          </div>
+          <div class="preview-players">
+            <div class="preview-player">
+              <div class="avatar avatar-green">A</div>
+              <div><strong>You</strong><span>1,246 ELO</span></div>
+              <b>580</b>
+            </div>
+            <div class="versus">VS</div>
+            <div class="preview-player right">
+              <b>520</b>
+              <div><strong>Nova</strong><span>1,231 ELO</span></div>
+              <div class="avatar avatar-purple">N</div>
+            </div>
+          </div>
+          <div class="preview-progress"><span style="width:68%"></span></div>
+          <div class="preview-question">
+            <span>CALCULUS · 24s</span>
+            <h3>For f(x) = 3x² − 4x + 1, find f′(2).</h3>
+            <div class="preview-options">
+              <button>4</button><button class="selected">8</button><button>10</button><button>12</button>
+            </div>
+          </div>
+          <div class="preview-footer"><span>Answer quickly for a speed bonus</span><strong>3 win streak 🔥</strong></div>
+        </div>
+        <div class="floating-card floating-one"><span>+212</span><small>speed points</small></div>
+        <div class="floating-card floating-two"><span>▲ 28</span><small>rating gained</small></div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="section-shell trust-grid">
+        <span>Built for Australian Methods students</span>
+        <span>Server-checked answers</span>
+        <span>Original question engine</span>
+        <span>Safe preset reactions</span>
+      </div>
+    </section>
+
+    <section class="section-shell section-block" id="play">
+      <div class="section-heading reveal">
+        <div><span class="section-kicker">CHOOSE YOUR MODE</span><h2>Every session has a purpose.</h2></div>
+        <p>Climb the ladder, challenge a friend, target a weak topic or train under pressure.</p>
+      </div>
+
+      <div class="mode-grid">
+        <article class="mode-card featured reveal" data-mode-card="ranked">
+          <div class="mode-icon">♜</div>
+          <span class="mode-badge">COMPETITIVE</span>
+          <h3>Ranked Arena</h3>
+          <p>Seven rounds against a similarly rated player. Wins and losses change your ELO.</p>
+          <div class="mode-meta"><span>2 players</span><span>7 rounds</span><span>30 sec</span></div>
+          <button class="card-action" type="button" data-start-mode="ranked">Find opponent <span>→</span></button>
+        </article>
+
+        <article class="mode-card reveal delay-one" data-mode-card="casual">
+          <div class="mode-icon">⚡</div>
+          <span class="mode-badge neutral">NO RATING</span>
+          <h3>Casual Duel</h3>
+          <p>A relaxed five-round battle. Perfect for warming up without risking your rank.</p>
+          <div class="mode-meta"><span>2 players</span><span>5 rounds</span><span>30 sec</span></div>
+          <button class="card-action" type="button" data-start-mode="casual">Quick match <span>→</span></button>
+        </article>
+
+        <article class="mode-card reveal delay-two" data-mode-card="topic">
+          <div class="mode-icon">◎</div>
+          <span class="mode-badge neutral">FOCUSED</span>
+          <h3>Topic Clash</h3>
+          <p>Choose calculus, probability, trig or another topic and face someone studying the same skill.</p>
+          <div class="mode-meta"><span>2 players</span><span>7 rounds</span><span>chosen topic</span></div>
+          <button class="card-action" type="button" data-start-mode="topic">Choose topic <span>→</span></button>
+        </article>
+
+        <article class="mode-card reveal" data-mode-card="private">
+          <div class="mode-icon">⌁</div>
+          <span class="mode-badge neutral">FRIENDS</span>
+          <h3>Private Room</h3>
+          <p>Create a six-character room code and challenge a friend on any device or Wi-Fi network.</p>
+          <div class="mode-meta"><span>room code</span><span>2 players</span><span>custom topic</span></div>
+          <button class="card-action" type="button" data-start-mode="private">Create or join <span>→</span></button>
+        </article>
+
+        <article class="mode-card reveal delay-one" data-mode-card="practice">
+          <div class="mode-icon">◇</div>
+          <span class="mode-badge neutral">SOLO</span>
+          <h3>Methobot Practice</h3>
+          <p>Battle a responsive bot while receiving worked explanations after every question.</p>
+          <div class="mode-meta"><span>8 rounds</span><span>all topics</span><span>worked steps</span></div>
+          <button class="card-action" type="button" data-start-mode="practice">Start practice <span>→</span></button>
+        </article>
+
+        <article class="mode-card reveal delay-two" data-mode-card="daily">
+          <div class="mode-icon">☀</div>
+          <span class="mode-badge neutral">DAILY</span>
+          <h3>Daily Challenge</h3>
+          <p>Ten identical questions for everyone each day. Compare your speed and accuracy.</p>
+          <div class="mode-meta"><span>10 rounds</span><span>daily reset</span><span>mixed</span></div>
+          <button class="card-action" type="button" data-start-mode="daily">Play today’s set <span>→</span></button>
+        </article>
+
+        <article class="mode-card reveal" data-mode-card="survival">
+          <div class="mode-icon">♢</div>
+          <span class="mode-badge warning">ONE LIFE</span>
+          <h3>Survival</h3>
+          <p>Questions get harder. One incorrect answer ends the run. How far can you go?</p>
+          <div class="mode-meta"><span>up to 20</span><span>one life</span><span>rising difficulty</span></div>
+          <button class="card-action" type="button" data-start-mode="survival">Begin run <span>→</span></button>
+        </article>
+
+        <article class="mode-card reveal delay-one" data-mode-card="blitz">
+          <div class="mode-icon">◫</div>
+          <span class="mode-badge warning">15 SECONDS</span>
+          <h3>Speed Blitz</h3>
+          <p>Twelve rapid-fire questions. Build quick recall and learn to make decisions under time pressure.</p>
+          <div class="mode-meta"><span>12 rounds</span><span>15 sec</span><span>speed score</span></div>
+          <button class="card-action" type="button" data-start-mode="blitz">Start blitz <span>→</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell section-block split-section" id="progress">
+      <div class="progress-demo glass-panel reveal">
+        <div class="panel-heading"><span>YOUR PROGRESS</span><button type="button" id="refreshProgress">Refresh</button></div>
+        <div class="profile-summary">
+          <div class="large-avatar" id="progressAvatar">G</div>
+          <div><h3 id="progressName">Guest player</h3><p id="progressSubtitle">Create an account to save progress.</p></div>
+          <span class="level-chip" id="levelChip">LVL 1</span>
+        </div>
+        <div class="stat-grid">
+          <div><span>Rating</span><strong id="statRating">1000</strong></div>
+          <div><span>Wins</span><strong id="statWins">0</strong></div>
+          <div><span>Games</span><strong id="statGames">0</strong></div>
+          <div><span>Win rate</span><strong id="statWinRate">0%</strong></div>
+        </div>
+        <div class="xp-block">
+          <div><span>Level progress</span><strong id="xpLabel">0 XP</strong></div>
+          <div class="xp-track"><span id="xpBar" style="width:0%"></span></div>
+        </div>
+        <div class="recent-list" id="recentMatches">
+          <div class="empty-state compact-empty">Log in to save matches and unlock analytics.</div>
+        </div>
+      </div>
+
+      <div class="feature-copy reveal delay-one">
+        <span class="section-kicker">LEARN FROM EVERY ROUND</span>
+        <h2>Competition that actually improves your Methods.</h2>
+        <p>Every battle reveals the correct answer, a concise worked explanation, your response speed and your rating change.</p>
+        <div class="feature-list">
+          <div><span>01</span><div><strong>Immediate feedback</strong><p>Understand the method while the question is still fresh.</p></div></div>
+          <div><span>02</span><div><strong>Persistent progress</strong><p>Accounts preserve ELO, wins, XP, level and recent match history.</p></div></div>
+          <div><span>03</span><div><strong>Original variations</strong><p>The question engine changes values and structures to reduce memorisation.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="leaderboard-section section-block" id="leaderboard">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <div><span class="section-kicker">GLOBAL LADDER</span><h2>Top solvers.</h2></div>
+          <p>Ranked players are ordered by ELO. Seasons and rewards are coming after the public beta.</p>
+        </div>
+        <div class="leaderboard-panel glass-panel reveal">
+          <div class="leaderboard-header-row"><span>Rank</span><span>Player</span><span>Record</span><span>Level</span><span>Rating</span></div>
+          <div id="leaderboardRows" class="leaderboard-rows">
+            <div class="leaderboard-loading">Loading leaderboard…</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell section-block pricing-section" id="pricing">
+      <div class="section-heading centered reveal">
+        <div><span class="section-kicker">SIMPLE PRICING</span><h2>Play free. Upgrade when you need more.</h2></div>
+        <p>Payments are intentionally disabled during the beta. The Pro plan is displayed now so the product is ready for future commercialisation.</p>
+      </div>
+      <div class="pricing-grid">
+        <article class="price-card reveal">
+          <span class="price-label">FREE</span>
+          <h3>$0</h3><p>For students who want to compete and practise.</p>
+          <ul><li>Ranked and casual battles</li><li>Private rooms</li><li>Daily challenge</li><li>Basic progress and leaderboard</li></ul>
+          <button class="button button-secondary full-width" type="button" data-start-mode="casual">Start playing</button>
+        </article>
+        <article class="price-card pro-card reveal delay-one">
+          <div class="popular-chip">COMING SOON</div>
+          <span class="price-label">METHOGLE PRO</span>
+          <h3>$6<span>/month</span></h3><p>Planned tools for serious exam preparation.</p>
+          <ul><li>Advanced topic analytics</li><li>Unlimited custom practice</li><li>Exam simulations</li><li>Full solution library</li><li>Profile cosmetics and Pro badge</li></ul>
+          <button class="button button-primary full-width" id="proButton" type="button">Join Pro waitlist</button>
+        </article>
+        <article class="price-card reveal delay-two">
+          <span class="price-label">SCHOOLS</span>
+          <h3>Custom</h3><p>Planned classroom tools for teachers and schools.</p>
+          <ul><li>Teacher dashboard</li><li>Class codes and assignments</li><li>Live tournaments</li><li>Student progress reports</li></ul>
+          <button class="button button-secondary full-width" id="schoolButton" type="button">Register interest</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="section-shell footer-grid">
+      <div><a class="brand footer-brand" href="#top"><span class="brand-mark"><svg viewBox="0 0 48 48"><path d="M9 8h20a10 10 0 0 1 10 10v5H25a8 8 0 0 0-8 8v9H9V8Z"/><path d="M39 40H24a7 7 0 0 1-7-7v-2h13a9 9 0 0 0 9-9V40Z" opacity=".55"/></svg></span>Methogle</a><p>Competitive Mathematics Methods practice.</p></div>
+      <div><strong>Product</strong><a href="#play">Game modes</a><a href="#leaderboard">Leaderboard</a><a href="#pricing">Pricing</a></div>
+      <div><strong>Safety</strong><span>Preset reactions only</span><span>No video or image sharing</span><span>Server-checked gameplay</span></div>
+      <div><strong>Beta</strong><span>Version 3.0</span><span>Original questions</span><span>Built in Australia</span></div>
+    </div>
+    <div class="section-shell footer-bottom"><span>© 2026 Methogle. Beta software.</span><span>Terms and privacy pages will be required before taking payments.</span></div>
+  </footer>
+
+  <section class="battle-view hidden" id="battleView" aria-live="polite">
+    <div class="battle-shell">
+      <div class="battle-topbar">
+        <a class="brand" href="#" id="battleLogo"><span class="brand-mark"><svg viewBox="0 0 48 48"><path d="M9 8h20a10 10 0 0 1 10 10v5H25a8 8 0 0 0-8 8v9H9V8Z"/><path d="M39 40H24a7 7 0 0 1-7-7v-2h13a9 9 0 0 0 9-9V40Z" opacity=".55"/></svg></span>Methogle</a>
+        <div class="battle-mode"><span id="battleMode">Ranked Arena</span><small id="battleTopic">Mixed</small></div>
+        <button class="button button-ghost compact" id="leaveMatchButton" type="button">Leave match</button>
+      </div>
+
+      <div class="battle-scoreboard" id="battleScoreboard"></div>
+
+      <div class="battle-main glass-panel">
+        <div class="round-meta">
+          <span id="roundLabel">Round 1 of 7</span>
+          <div class="timer-wrap"><svg viewBox="0 0 52 52"><circle class="timer-bg" cx="26" cy="26" r="22"/><circle class="timer-ring" id="timerRing" cx="26" cy="26" r="22"/></svg><strong id="timerText">30</strong></div>
+          <span id="questionSkill">Calculus</span>
+        </div>
+        <div class="question-area">
+          <span class="difficulty-label" id="difficultyLabel">DIFFICULTY 2</span>
+          <h2 id="questionText">Waiting for the first question…</h2>
+          <div class="answer-grid" id="answerGrid"></div>
+        </div>
+        <div class="answer-feedback hidden" id="answerFeedback">
+          <div class="feedback-icon" id="feedbackIcon">✓</div>
+          <div><strong id="feedbackTitle">Correct</strong><p id="feedbackText">+180 points</p></div>
+        </div>
+        <div class="explanation-panel hidden" id="explanationPanel">
+          <span>WORKED EXPLANATION</span>
+          <p id="explanationText"></p>
+        </div>
+      </div>
+
+      <div class="reaction-bar">
+        <span>Quick reactions</span>
+        <button type="button" data-reaction="GG">GG</button>
+        <button type="button" data-reaction="Nice!">Nice!</button>
+        <button type="button" data-reaction="Wow">Wow</button>
+        <button type="button" data-reaction="Close!">Close!</button>
+        <button type="button" data-reaction="🔥">🔥</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal-backdrop hidden" id="authModal">
+    <div class="modal auth-modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="modal-close" type="button" data-close-modal="authModal" aria-label="Close">×</button>
+      <div class="modal-logo brand-mark"><svg viewBox="0 0 48 48"><path d="M9 8h20a10 10 0 0 1 10 10v5H25a8 8 0 0 0-8 8v9H9V8Z"/><path d="M39 40H24a7 7 0 0 1-7-7v-2h13a9 9 0 0 0 9-9V40Z" opacity=".55"/></svg></div>
+      <span class="section-kicker">METHOGLE ACCOUNT</span>
+      <h2 id="authTitle">Welcome back</h2>
+      <p id="authIntro">Log in to enter ranked matches and save your progress.</p>
+      <div class="auth-tabs"><button class="active" id="authLoginTab" type="button">Log in</button><button id="authSignupTab" type="button">Create account</button></div>
+      <form id="authForm">
+        <label class="field hidden" id="usernameField"><span>Username</span><input id="authUsername" autocomplete="username" maxlength="20" placeholder="e.g. IntegralKing"></label>
+        <label class="field"><span>Email</span><input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+        <label class="field"><span>Password</span><input id="authPassword" type="password" autocomplete="current-password" minlength="8" placeholder="At least 8 characters" required></label>
+        <button class="button button-primary full-width modal-submit" id="authSubmit" type="submit">Log in</button>
+      </form>
+      <div class="form-message" id="authMessage"></div>
+      <div class="auth-note">Your password is handled by Supabase Auth. Methogle never stores it in the app database.</div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop hidden" id="topicModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="topicTitle">
+      <button class="modal-close" type="button" data-close-modal="topicModal" aria-label="Close">×</button>
+      <span class="section-kicker">TARGET A SKILL</span>
+      <h2 id="topicTitle">Choose a topic</h2>
+      <p>Select the topic used for your next match.</p>
+      <div class="topic-grid" id="topicGrid"></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop hidden" id="privateModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="privateTitle">
+      <button class="modal-close" type="button" data-close-modal="privateModal" aria-label="Close">×</button>
+      <span class="section-kicker">PLAY WITH A FRIEND</span>
+      <h2 id="privateTitle">Private room</h2>
+      <p>Create a room and send the code to your friend, or enter a code they sent you.</p>
+      <div class="private-actions">
+        <button class="button button-primary full-width" id="createRoomButton" type="button">Create a room</button>
+        <div class="or-divider"><span>or</span></div>
+        <label class="field"><span>Room code</span><input id="roomCodeInput" maxlength="6" placeholder="ABC123" autocomplete="off"></label>
+        <button class="button button-secondary full-width" id="joinRoomButton" type="button">Join room</button>
+      </div>
+      <div class="room-result hidden" id="roomResult"><span>Your room code</span><strong id="roomCodeDisplay">ABC123</strong><button type="button" id="copyRoomCode">Copy code</button><p>Waiting for your friend to join…</p></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop hidden" id="queueModal">
+    <div class="modal queue-modal" role="dialog" aria-modal="true" aria-labelledby="queueTitle">
+      <div class="queue-animation"><span></span><span></span><span></span></div>
+      <span class="section-kicker">MATCHMAKING</span>
+      <h2 id="queueTitle">Finding your opponent</h2>
+      <p id="queueText">Searching for a player near your rating…</p>
+      <div class="queue-timer" id="queueTimer">0:00</div>
+      <button class="button button-ghost full-width" id="cancelQueueButton" type="button">Cancel search</button>
+    </div>
+  </div>
+
+  <div class="modal-backdrop hidden" id="resultModal">
+    <div class="modal result-modal" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+      <div class="result-emblem" id="resultEmblem">🏆</div>
+      <span class="section-kicker" id="resultKicker">MATCH COMPLETE</span>
+      <h2 id="resultTitle">Victory</h2>
+      <p id="resultSubtitle">You outsolved your opponent.</p>
+      <div class="result-scores" id="resultScores"></div>
+      <div class="rating-result" id="ratingResult"></div>
+      <div class="result-actions"><button class="button button-primary" id="playAgainButton" type="button">Play again</button><button class="button button-secondary" id="returnHomeButton" type="button">Return home</button></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop hidden" id="profileModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+      <button class="modal-close" type="button" data-close-modal="profileModal" aria-label="Close">×</button>
+      <span class="section-kicker">YOUR ACCOUNT</span><h2 id="profileTitle">Player profile</h2>
+      <div class="profile-modal-card"><div class="large-avatar" id="modalAvatar">M</div><div><strong id="modalUsername">Player</strong><span id="modalRating">1000 ELO</span></div></div>
+      <button class="button button-secondary full-width" id="logoutButton" type="button">Log out</button>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+  <div class="reaction-pop hidden" id="reactionPop"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>
